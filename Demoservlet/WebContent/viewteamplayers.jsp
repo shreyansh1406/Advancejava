@@ -24,7 +24,7 @@ for(Player p: li){
 <h1>Team Name: <%=name %> </h1>
 <h2>Players are</h2>
 <% for(Player p2:nli) {%>
-<%=p2.getPlayerName() %> <br><br>
+<%=p2.getName() %> <br><br>
 <%} %>
 </body>
 </html> 
