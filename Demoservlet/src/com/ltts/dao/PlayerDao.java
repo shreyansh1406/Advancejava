@@ -35,10 +35,10 @@ public class PlayerDao {
 		List<Player> li=new ArrayList<Player>();
 		Connection mc=MyConnection.getConnection(); // TRanfers control to another 
 		Statement ps=mc.createStatement();
-		ResultSet rs=ps.executeQuery("select * from web_player");
+		ResultSet rs=ps.executeQuery("select * from _player");
 		//Player p=new Player();
 		while(rs.next()) {
-			li.add(new Player(rs.getInt(1),rs.getString(2),rs.getString(3)));
+			li.add(new Player(rs.getInt(1),rs.getString(2),rs.getDate(3),rs.getInt(4),rs.getInt(5),rs.getString(6)));
 
 		}
 		return li;
@@ -48,9 +48,9 @@ public class PlayerDao {
 		Player p=new Player();
 		List<Player> li=getAllPlayers();
 		for(Player p1:li) {
-			if(p1.getPlayerid() == id) {
-				p.setPlayerId(id);
-				p.setPlayerName(p1.getPlayerName());
+			if(p1.getPid() == id) {
+				p.setPid(id);
+				p.setName(p1.getName());
 				p.setCountry(p1.getCountry());
 			}
 		}
