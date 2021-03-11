@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <%@ page import ="java.util.*,com.ltts.demoweb2.model.*,com.ltts.demoweb2.dao.*" %>
+  <%@ page import ="java.util.*,com.ltts.model.*,com.ltts.dao.*" %>
   <%
   PlayerDao pd=new PlayerDao();
   Set<String> teamname = new TreeSet<String>();
