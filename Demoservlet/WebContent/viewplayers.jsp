@@ -24,10 +24,10 @@ List<Player> li=pd.getAllPlayers();
 for(Player p:li){
 %>
 <tr>
-<td><%=p.getPlayerId() %></td>
-<td><%=p.getPlayerName() %></td>
+<td><%=p.getPid() %></td>
+<td><%=p.getName() %></td>
 <td><%=p.getCountry() %></td>
-<td><a href="editplayer.jsp?id=<%=p.getPlayerId()%>">Update</a></td>
+<td><a href="editplayer.jsp?id=<%=p.getPid()%>">Update</a></td>
 </tr>
 <%} %>
 </table>
