@@ -14,7 +14,7 @@ PlayerDao pd=new PlayerDao();
 Player p1=pd.getPlayerById(id);
 %>
 <form action="./UpdatePlayerServlet" method="post">
-Player Id: <%=p1.getPid() %> <br><br>
+Player Id: <input type="hidden" name="id" value="<%=p1.getPid() %>" ><br><br>
 Player Name: <input type="text" value="<%=p1.getName()%>" name="pname"><br><br>
 Player Country: <input type="text" value="<%=p1.getCountry()%>" name="pcountry"><br><br>
 <input type="submit" value="Update Player">

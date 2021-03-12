@@ -19,6 +19,9 @@ public class Player {
 		this.wic = wic;
 		this.country = country;
 	}
+	public Player() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getPid() {
 		return pid;
 	}

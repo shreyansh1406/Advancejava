@@ -1,8 +1,6 @@
 package com.ltts.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,20 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ltts.dao.PlayerDao;
-import com.ltts.model.Player;
+import com.ltts.dao.teamdao;
 
 /**
- * Servlet implementation class InsertPlayerServlet
+ * Servlet implementation class UpdateTeamServlet
  */
-@WebServlet("/InsertPlayerServlet")
-public class InsertPlayerServlet extends HttpServlet {
+@WebServlet("/UpdateTeamServlet")
+public class UpdateTeamServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InsertPlayerServlet() {
+    public UpdateTeamServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,34 +39,24 @@ public class InsertPlayerServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
-		 PrintWriter out = response.getWriter();  
-		 int pid=Integer.parseInt(request.getParameter("pid"));
-		String name=request.getParameter("name");
-		String date=request.getParameter("dob");
-		Date dat = Date.valueOf(date);
-		int run=Integer.parseInt(request.getParameter("run"));
-		int wic=Integer.parseInt(request.getParameter("wic"));
-		String country=request.getParameter("countr");
-		Player p=new Player(pid,name,dat,run,wic,country);
-		System.out.println("Inside Servlet: "+p);
-		PlayerDao pd=new PlayerDao();
-		 
-		boolean b=false;
+		doGet(request, response);
+		int id=Integer.parseInt(request.getParameter("id"));
+		String pname=request.getParameter("tname");
+		String oname=request.getParameter("oname");
+		String cname=request.getParameter("cname");
 		RequestDispatcher rd=null;
+		teamdao po=new teamdao();
 		try {
-			b=pd.insertPlayer(p); // Control TRanfers to Dao file
+			po.updateteam(id,pname,oname,cname);
 			rd=request.getRequestDispatcher("success.html");
 			rd.forward(request, response);
-			//System.out.println("Successfully Inserted...");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			out.write("Already Player name Used: "+e);
-			rd=request.getRequestDispatcher("addplayer1.html");
+			rd=request.getRequestDispatcher("editeam.jsp");
 			rd.include(request, response);
 			e.printStackTrace();
 		}
+		
 	}
 
-	
 }

@@ -16,7 +16,7 @@ public class MyConnection {
 		String username=(String)p.getProperty("user");
 		String password=(String)p.getProperty("password");
 		System.out.println("Inside MyConnection.." +url+" "+username);
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection con=DriverManager.getConnection(url,username,password);
 		System.out.println("Inside MyConnection..");
 		return con;

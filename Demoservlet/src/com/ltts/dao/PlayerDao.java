@@ -57,5 +57,16 @@ public class PlayerDao {
 
 		return p;
 	}
+	public Boolean updatePlayer(int id,String pname,String count) throws Exception
+	{
+		Connection mc=MyConnection.getConnection();
+		PreparedStatement ps=mc.prepareStatement("UPDATE _player SET name=?,country=? where pid=?");
+		ps.setString(1,pname);
+		ps.setString(2, count);
+		ps.setInt(3,id);
+		Boolean b=ps.execute();
+		return b;
+	}
+
 
 }
