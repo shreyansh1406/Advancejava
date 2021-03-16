@@ -5,7 +5,11 @@ You are not logged in<br/>
 <a href="index.jsp">Please Login</a>
 <%} else {
 %>
-Welcome <%=session.getAttribute("userid")%>
+
+
+
+<div class="container-fluid bg-2 text-center">
+<center>Welcome <%=session.getAttribute("userid")%></center>
 <br>
 <br>
 <a href="addplayer1.html">Add Player</a>
@@ -26,7 +30,11 @@ Welcome <%=session.getAttribute("userid")%>
 <a href="viewAllteams.jsp">View AllTeams</a>
 <br> 
 <br>
+<br>
+<br>
 <a href='logout.jsp'>Log out</a>
+ </div>
+
 <%
     }
 %><%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -34,8 +42,30 @@ Welcome <%=session.getAttribute("userid")%>
 <!DOCTYPE html>
 <html>
 <head>
+<title>IPL 2020 </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+       
+
+        p {
+            font-size: 16px;
+        }
+
+        .margin {
+            margin-bottom: 45px;
+        }
+
+        a:hover {
+            color: #1abc9c !important;
+        }
+  }
+    </style>
 <meta charset="ISO-8859-1">
-<title>Dashboard</title>
 </head>
 <body>
 

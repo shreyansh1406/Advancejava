@@ -4,11 +4,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registration</title>
+        <link href="${contextPath}/resource/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
-    <body bgcolor="silver">
-        <form method="post" action="userRegistration.jsp">
+    
+    <body >
+        <form method="post" action="<%=request.getContextPath()%>/userRegistration.jsp">
             <center>
-            <table border="1" width="30%" cellpadding="5">
+            <table border="1" width="30%" cellpadding="5" class="container" style= "border:border-collapse;">
                 <thead>
                     <tr>
                         <th colspan="2">Enter Information Here</th>
@@ -36,8 +39,8 @@
                         <td><input type="password" name="password" value="" /></td>
                     </tr>
                     <tr>
-                        <td><input type="submit" value="Submit" /></td>
-                        <td><input type="reset" value="Reset" /></td>
+                        <td><input type="submit" value="Submit" class="btn btn-primary"/></td>
+                        <td><input type="reset" value="Reset" class="btn btn-primary" /></td>
                     </tr>
                     <tr>
                         <td colspan="2">Already registered!! <a href="index.jsp">Login Here</a></td>
